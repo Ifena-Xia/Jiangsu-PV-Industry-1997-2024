@@ -20,4 +20,4 @@ Before 2011, favorable national policy frameworks did not stimulate domestic PV 
 
 ---
 
-*Independent research project.*
+*Course project, University of Pennsylvania.*
