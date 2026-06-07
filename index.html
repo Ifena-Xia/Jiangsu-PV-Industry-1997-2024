@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jiangsu's Photovoltaic Industry – Yifang Xia</title>
+  <title>Hybrid Governance and Profit Incentives: Jiangsu's PV Industry · Yifang Xia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── Design tokens (green theme) ── */
+    /* ── Design tokens (dark-green theme) ── */
     :root {
-      --green:        #007660;
-      --green-mid:    #1a8f78;
-      --green-light:  #3dab92;
-      --green-pale:   #eaf4f1;
-      --green-rule:   #9dd0c4;
+      --green:        #2c6e49;
+      --green-mid:    #3c7d59;
+      --green-light:  #5e9b78;
+      --green-pale:   #e9f2ec;
+      --green-rule:   #a7c9b5;
 
-      --ink:          #1a201e;
-      --ink-mid:      #2e3b36;
-      --ink-muted:    #556660;
-      --page:         #f5f9f7;
-      --surface:      #ecf4f1;
-      --border:       #ccddd8;
-      --caption:      #7a9e96;
+      --ink:          #1a1d20;
+      --ink-mid:      #333c44;
+      --ink-muted:    #5c6a75;
+      --page:         #f8fbf9;
+      --surface:      #eef4f0;
+      --border:       #d3e0d8;
+      --caption:      #788f80;
 
       --font-body:    'Source Serif 4', Georgia, serif;
       --font-head:    'Lora', Georgia, serif;
@@ -32,10 +32,8 @@
       --container-pad: clamp(1.25rem, 5vw, 4rem);
     }
 
-    /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 17px; scroll-behavior: smooth; }
-
     body {
       font-family: var(--font-body);
       font-weight: 300;
@@ -45,335 +43,159 @@
       background-color: var(--page);
     }
 
-    /* ── Skip nav ── */
     .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--green);
-      color: #fff;
-      padding: 8px 16px;
-      font-size: 0.875rem;
-      z-index: 100;
+      position: absolute; top: -40px; left: 0;
+      background: var(--green); color: #fff;
+      padding: 8px 16px; font-size: 0.875rem; z-index: 100;
       transition: top 0.2s;
     }
     .skip-link:focus { top: 0; }
 
-    /* ── Hero ── */
-    .hero-image {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      display: block;
+    /* ── Header band ── */
+    .header-band {
+      background: var(--surface);
       border-bottom: 3px solid var(--green);
     }
-
-    .hero-caption {
-      font-size: 0.78rem;
-      color: var(--caption);
-      text-align: right;
-      padding: 0.35rem var(--container-pad);
-      background: var(--surface);
-      font-style: italic;
-    }
-
-    /* ── Site header ── */
-    .site-header {
-      background-color: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-
     .site-header-inner {
       max-width: var(--container-max);
       margin: 0 auto;
-      padding: 2.5rem var(--container-pad) 2rem;
+      padding: 3rem var(--container-pad) 2.25rem;
     }
-
     .meta-line {
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green-light);
-      margin-bottom: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green-light); margin-bottom: 0.75rem;
     }
-
     h1 {
       font-family: var(--font-head);
       font-size: clamp(1.6rem, 4vw, 2.2rem);
-      font-weight: 600;
-      line-height: 1.3;
-      color: var(--green);
-      margin-bottom: 0.5rem;
+      font-weight: 600; line-height: 1.3;
+      color: var(--green); margin-bottom: 0.6rem;
     }
-
-    .byline {
-      font-size: 0.92rem;
-      font-weight: 300;
-      color: var(--ink-muted);
-      font-style: italic;
+    .standfirst {
+      font-family: var(--font-head);
+      font-size: clamp(1.02rem, 2.2vw, 1.18rem);
+      font-style: italic; font-weight: 400;
+      color: var(--ink-mid); line-height: 1.5; margin-bottom: 0.9rem;
+      max-width: 40rem;
     }
+    .byline { font-size: 0.92rem; font-weight: 300; color: var(--ink-muted); font-style: italic; }
 
     /* ── Table of contents ── */
     .toc-nav {
       background: var(--green-pale);
       border-left: 3px solid var(--green-rule);
       padding: 1.25rem var(--container-pad);
-      margin: 2.5rem auto 0;
+      margin: 0 auto;
       max-width: var(--container-max);
     }
-
     .toc-nav h2 {
-      font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green-light);
-      margin-bottom: 0.75rem;
-      border-top: none;
-      display: block;
-      padding-top: 0;
+      font-family: var(--font-body); font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green-light); margin-bottom: 0.75rem;
+      border-top: none; display: block; padding-top: 0;
     }
-
-    .toc-nav ol {
-      list-style: decimal;
-      padding-left: 1.25rem;
-      columns: 2;
-      column-gap: 2rem;
-    }
-
+    .toc-nav ol { list-style: decimal; padding-left: 1.25rem; columns: 2; column-gap: 2rem; }
     .toc-nav li { font-size: 0.88rem; line-height: 1.7; color: var(--ink-mid); }
-
-    .toc-nav a {
-      color: var(--green);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.15s;
-    }
+    .toc-nav a { color: var(--green); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
     .toc-nav a:hover { border-color: var(--green-light); }
 
-    /* ── Main ── */
-    main {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      padding: 3rem var(--container-pad) 4rem;
-    }
-
-    section {
-      margin-bottom: 3.5rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid var(--border);
-    }
+    main { max-width: var(--container-max); margin: 0 auto; padding: 3rem var(--container-pad) 4rem; }
+    section { margin-bottom: 3.5rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
     section:last-of-type { border-bottom: none; }
 
-    /* ── Headings ── */
     h2 {
       font-family: var(--font-head);
       font-size: clamp(1.15rem, 2.5vw, 1.45rem);
-      font-weight: 600;
-      color: var(--green);
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      padding-top: 0.25rem;
-      border-top: 2px solid var(--green-rule);
-      display: inline-block;
+      font-weight: 600; color: var(--green);
+      margin-top: 2.5rem; margin-bottom: 1rem; padding-top: 0.25rem;
+      border-top: 2px solid var(--green-rule); display: inline-block;
     }
+    h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-top: 2rem; margin-bottom: 0.6rem; }
+    p { margin-bottom: 1.2em; hyphens: auto; }
 
-    h3 {
-      font-family: var(--font-head);
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    /* ── Body text ── */
-    p {
-      margin-bottom: 1.2em;
-      hyphens: auto;
-    }
-
-    /* ── Indicator list (replacing <p>•</p> pattern) ── */
-    .indicator-list {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .indicator-list li {
-      padding-left: 1.4rem;
-      position: relative;
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
-
-    .indicator-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.6em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green-rule);
-    }
-
-    .indicator-list strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    /* ── Numbered agency list ── */
-    .agency-list {
-      list-style: decimal;
-      padding-left: 1.4rem;
-      margin: 0.75rem 0 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .agency-list li {
-      font-size: 0.93rem;
-      line-height: 1.65;
-      color: var(--ink-mid);
-    }
-
-    /* ── Policy findings (replacing nested <p> lists) ── */
-    .policy-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .policy-card {
-      border-left: 3px solid var(--green-rule);
-      padding: 0.75rem 1.1rem;
-      background: var(--green-pale);
-      border-radius: 0 4px 4px 0;
-    }
-
-    .policy-card h4 {
-      font-family: var(--font-head);
-      font-size: 0.93rem;
-      font-weight: 600;
-      color: var(--green);
-      margin-bottom: 0.5rem;
-    }
-
-    .policy-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-
-    .policy-card li {
-      font-size: 0.88rem;
-      line-height: 1.6;
-      color: var(--ink-mid);
-      padding-left: 1.1rem;
-      position: relative;
-    }
-
-    .policy-card li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--green-rule);
-    }
-
-    /* ── Footnote ── */
-    .footnote {
-      font-size: 0.8rem;
-      color: var(--ink-muted);
-      background: var(--surface);
-      border-left: 2px solid var(--border);
-      padding: 0.6rem 1rem;
-      margin: 1rem 0 1.5rem;
-      line-height: 1.6;
-      font-style: italic;
-    }
-
-    /* ── Blockquote ── */
     blockquote {
       border-left: 3px solid var(--green-rule);
-      padding: 0.5rem 1rem;
-      margin: 1.5rem 0;
-      color: var(--ink-muted);
-      font-style: italic;
-      font-size: 0.93rem;
+      padding: 0.5rem 1rem; margin: 1.5rem 0;
+      color: var(--ink-muted); font-style: italic; font-size: 0.93rem;
     }
 
     /* ── Figures ── */
-    figure {
-      margin: 2rem auto;
-    }
+    figure { margin: 2rem auto; }
+    figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 4px; }
+    figcaption { font-size: 0.8rem; color: var(--caption); margin-top: 0.5rem; font-style: italic; line-height: 1.5; }
 
-    figure img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-    }
-
-    figcaption {
-      font-size: 0.8rem;
-      color: var(--caption);
-      margin-top: 0.5rem;
-      font-style: italic;
-      line-height: 1.5;
-      text-align: center;
-    }
+    /* ── Verdict line above a figure ── */
+    .verdict { font-family: var(--font-head); font-weight: 600; color: var(--green); font-size: 1.05rem; margin: 0 0 0.4rem; }
 
     /* ── Finding highlight ── */
-    .finding-box {
-      background: var(--green-pale);
-      border: 1px solid var(--green-rule);
-      border-radius: 4px;
-      padding: 1.25rem 1.5rem;
-      margin: 2rem 0;
-    }
-    .finding-box p { margin-bottom: 0; font-size: 0.95rem; }
+    .finding-box { background: var(--green-pale); border: 1px solid var(--green-rule); border-radius: 4px; padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .finding-box p { margin-bottom: 0.7em; font-size: 0.95rem; }
+    .finding-box p:last-child { margin-bottom: 0; }
 
-    /* ── Links ── */
+    /* ── Method / caveat note ── */
+    .note-box { background: var(--surface); border-left: 3px solid var(--green-light); padding: 1rem 1.25rem; margin: 1.75rem 0; font-size: 0.92rem; line-height: 1.7; }
+    .note-box strong { color: var(--green); }
+
+    /* ── Data tables ── */
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: 0.88rem; font-family: var(--font-body); }
+    .data-table caption { caption-side: top; text-align: left; font-size: 0.8rem; color: var(--caption); font-style: italic; margin-bottom: 0.5rem; }
+    .data-table th, .data-table td { padding: 0.55rem 0.8rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .data-table thead th { color: var(--green); font-weight: 600; border-bottom: 2px solid var(--green-rule); }
+    .data-table td.yr, .data-table th.yr { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--green-mid); font-weight: 600; }
+    .data-table tbody tr:last-child td { border-bottom: 1px solid var(--green-rule); }
+
+    /* ── Three-frame comparison table ── */
+    .frames { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: 0.88rem; }
+    .frames th, .frames td { padding: 0.65rem 0.8rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .frames thead th { color: var(--green); font-weight: 600; border-bottom: 2px solid var(--green-rule); }
+    .frames td:first-child { font-weight: 600; color: var(--ink); }
+
+    /* ── Phase strip ── */
+    .phase-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 1.75rem 0; border: 1px solid var(--green-rule); border-radius: 4px; overflow: hidden; }
+    .phase { padding: 0.85rem 0.9rem; border-right: 1px solid var(--green-rule); background: var(--green-pale); }
+    .phase:last-child { border-right: none; }
+    .phase .ph-label { font-family: var(--font-head); font-weight: 600; color: var(--green); font-size: 0.9rem; display: block; }
+    .phase .ph-years { font-size: 0.74rem; letter-spacing: 0.04em; color: var(--green-light); text-transform: uppercase; display: block; margin: 0.15rem 0 0.4rem; }
+    .phase .ph-note { font-size: 0.82rem; line-height: 1.45; color: var(--ink-mid); }
+
+    /* ── Progressive disclosure ── */
+    details.more { margin: 1.25rem 0; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); }
+    details.more summary {
+      cursor: pointer; padding: 0.7rem 1rem;
+      font-family: var(--font-body); font-size: 0.82rem; font-weight: 400;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--green);
+      list-style: none;
+    }
+    details.more summary::-webkit-details-marker { display: none; }
+    details.more summary::before { content: "▸ "; color: var(--green-light); }
+    details.more[open] summary::before { content: "▾ "; }
+    details.more .more-body { padding: 0 1.25rem 1rem; font-size: 0.9rem; line-height: 1.7; }
+
+    /* ── Footnotes ── */
+    .fn { font-size: 0.72rem; vertical-align: super; line-height: 0; color: var(--green); text-decoration: none; }
+    .footnotes { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.6; }
+    .footnotes li { margin-bottom: 0.6rem; }
+
+    /* ── Kicker ── */
+    .kicker { font-family: var(--font-head); font-style: italic; font-size: 1.15rem; line-height: 1.5; color: var(--green); border-top: 2px solid var(--green-rule); padding-top: 1.2rem; margin-top: 1.5rem; }
+
+    /* ── References ── */
+    .references { font-size: 0.82rem; line-height: 1.6; color: var(--ink-muted); }
+    .references p { margin-bottom: 0.7em; padding-left: 1.4em; text-indent: -1.4em; }
+
     a { color: var(--green-mid); }
     a:hover { color: var(--green); }
 
-    .references-link {
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: var(--green);
-      text-decoration: none;
-      border-bottom: 1px solid var(--green-rule);
-      padding-bottom: 1px;
-      transition: color 0.15s;
-    }
-    .references-link:hover { color: var(--green-light); }
+    footer { border-top: 1px solid var(--border); padding: 1.5rem; text-align: center; font-size: 0.78rem; color: var(--caption); }
 
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--caption);
-    }
-
-    /* ── Responsive ── */
     @media (max-width: 600px) {
       .toc-nav ol { columns: 1; }
       h1 { font-size: 1.5rem; }
+      .phase-strip { grid-template-columns: 1fr 1fr; }
+      .phase:nth-child(2) { border-right: none; }
+      .phase:nth-child(1), .phase:nth-child(2) { border-bottom: 1px solid var(--green-rule); }
     }
   </style>
 </head>
@@ -381,229 +203,280 @@
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<figure style="margin:0;">
-  <img class="hero-image" src="PV neon.png" alt="Photovoltaic solar panels illuminated at dusk, representing China's green energy transition" />
-</figure>
-<p class="hero-caption">Image: photovoltaic infrastructure in China's industrial east.</p>
-
-<header class="site-header" role="banner">
+<!-- ── Header ── -->
+<header class="header-band">
   <div class="site-header-inner">
-    <p class="meta-line">Research Essay &nbsp;·&nbsp; Political Economy &nbsp;·&nbsp; Jiangsu, China &nbsp;·&nbsp; 1997–2024</p>
-    <h1>Hybrid Governance and Profit Incentives in China's Green Transition: Evidence from Jiangsu's Photovoltaic Industry (1997–2024)</h1>
-    <p class="byline">Yifang Xia</p>
+    <div class="meta-line">Process Tracing · Energy Policy · Article 3 of 3</div>
+    <h1>Hybrid Governance and Profit Incentives in China's Green Transition: Evidence from Jiangsu's Photovoltaic Industry, 1997 to 2024</h1>
+    <p class="standfirst">China's largest solar base was less commanded than permitted. The state drew the lines; profit decided what grew inside them.</p>
+    <div class="byline">Yifang Xia</div>
   </div>
 </header>
 
+<!-- ── Contents ── -->
 <nav class="toc-nav" aria-label="Table of contents">
   <h2>Contents</h2>
   <ol>
-    <li><a href="#frameworks">Competing Frameworks</a></li>
-    <li><a href="#political-economy">Political Economy of China's PV Industry</a></li>
-    <li><a href="#process-tracing">Process Tracing in Jiangsu</a></li>
-    <li><a href="#policy-timeline">Provincial Policy Timeline</a></li>
-    <li><a href="#observation">Provincial PV Observation</a></li>
-    <li><a href="#synthesis">Synthesis</a></li>
+    <li><a href="#puzzle">The puzzle and three frames</a></li>
+    <li><a href="#phases">Policy phases and the levers of intervention</a></li>
+    <li><a href="#hypotheses">Three hypotheses, and what each predicts</a></li>
+    <li><a href="#timeline">The provincial policy timeline</a></li>
+    <li><a href="#patents">Evidence I: innovation</a></li>
+    <li><a href="#integration">Evidence II: social integration</a></li>
+    <li><a href="#diffusion">Evidence III: diffusion and the 531 cut</a></li>
+    <li><a href="#synthesis">Synthesis: what drove the industry</a></li>
     <li><a href="#references">References</a></li>
   </ol>
 </nav>
 
 <main id="main-content">
 
-  <!-- intro -->
-  <section id="intro">
-    <p style="margin-top:0;">China's rapid rise as the world's largest producer and consumer of photovoltaic (PV) technology is often attributed to strong central planning and industrial policy. Yet much of the country's renewable transition unfolds not at the national but at the provincial level, where governments interpret, translate, and modify central directives according to local industrial structures and fiscal capacities. This paper examines how Jiangsu Province — one of China's earliest and most dynamic PV manufacturing bases — has navigated this multi-level governance framework from 1997 to 2024.</p>
+  <!-- ════════ 1. PUZZLE / WEB REVIEW ════════ -->
+  <section id="puzzle">
+    <h2>1. The Puzzle, and Three Frames</h2>
+
+    <p>China's rise to the world's largest solar industry is usually credited to central planning, yet the build-out happened province by province, and the labels scholars reach for disagree about what actually drove it: the commanding state, the firms and localities adapting from below, or some hybrid in which the center sets the bounds and the market fills them. This study uses Jiangsu, one of China's earliest and most dynamic photovoltaic (PV) manufacturing bases, to adjudicate among the three.</p>
+
+    <p>Each frame names a different driver, and, more usefully, each implies something we should be able to see in Jiangsu if it is the right account. On the authoritarian-mobilization view, the center commands and provinces and firms execute (Dent 2012); if it holds, diffusion in Jiangsu should track central directives and subsidy timing, expanding when the state signals and contracting when it withdraws. On the adaptive-and-participatory view, localities, firms, and citizens shape policy from below (Huang et al. 2020; Schubert and Heberer 2015); if it holds, local experiments and bottom-up feedback should lead policy rather than follow it. On the hybrid view, the center sets ideological and regulatory bounds while profit and market shocks drive behavior within them (Fischer et al. 2021; Xiang and Lo 2025); if it holds, policy should set the timing and scale of build-out while enterprise viability decides what actually runs.</p>
+
+    <table class="frames">
+      <caption>The three frames, and what each predicts for Jiangsu.</caption>
+      <thead>
+        <tr><th>Frame</th><th>Who drives development</th><th>What we should see in Jiangsu if true</th><th>Key citation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Authoritarian mobilization (H1)</td><td>central-state command</td><td>diffusion follows central targets and subsidies; firms rise and fall with directives</td><td>Dent 2012</td></tr>
+        <tr><td>Adaptive / participatory (H2)</td><td>localities, firms, citizens from below</td><td>local experiments and feedback lead policy; visible bottom-up influence on rule-making</td><td>Huang et al. 2020</td></tr>
+        <tr><td>Hybrid / profit-centered (H3)</td><td>center sets bounds, profit and market drive behavior</td><td>policy sets timing and scale; enterprise viability decides persistence; correction follows backlash</td><td>Fischer et al. 2021</td></tr>
+      </tbody>
+    </table>
+
+    <p>One assumption runs under all three labels: that one-party rule defines how governance works. Li (2012) is the one who pulls them apart, distinguishing the resilience of China's institutions from the ruling legitimacy of the Party, and this paper takes up that separation directly, treating the Party's political grip and the way the PV economy is actually steered as two questions, not one.</p>
+
+    <details class="more">
+      <summary>The fuller debate</summary>
+      <div class="more-body">
+        <p>The literature offers more vocabulary than these three frames. The mobilization camp runs from fragmented authoritarianism (Lieberthal and Oksenberg 1988) through the regulatory state (Zhang and Yang 2022), technocratic developmentalism (Karagiannis et al. 2021), and state-led finance (Pan et al. 2021). The adaptive camp adds defensive participation (Huang et al. 2020) and evolutionary pro-growth coalitions (Wang et al. 2021). The hybrid camp adds local-state developmentalism (Schubert and Heberer 2015), Su and Tao's (2017) land-based fiscal developmentalism, Han's (2021) fragmentation-and-centralization cycle, Fischer et al.'s (2021) steering theory of hard, indirect, and soft instruments, and Xiang and Lo's (2025) Authoritarian Environmentalism 2.0. Several of these reappear below, at the point where the Jiangsu evidence touches them, rather than as an upfront catalogue. The full survey sits in the working paper.</p>
+      </div>
+    </details>
   </section>
 
-  <!-- 1 -->
-  <section id="frameworks">
-    <h2>1. Competing Frameworks of China's Green Development Governance</h2>
+  <!-- ════════ 2. PHASES AND LEVERS ════════ -->
+  <section id="phases">
+    <h2>2. Policy Phases and the Levers of Intervention</h2>
 
-    <p>A large body of literature explains China's renewable energy development through the lens of state-led mobilization and centralized coordination. These studies highlight the state's capacity to mobilize resources, steer markets, and maintain strategic industrial control (Dent, 2012; Wang &amp; Yeh, 2020; Karagiannis et al., 2021; Pan et al., 2021; Yang, 2022; Tai, 2022; Hu, 2023; Hung, 2024; He, 2024; Brown, 2024).</p>
+    <p>Before tracing Jiangsu, it helps to fix the national backdrop and the instruments the state actually had to hand. China's PV policy moved through four phases, each with a different lever and priority.</p>
 
-    <p>While previous scholarship emphasizes hierarchical coordination, another strand of research highlights adaptive, networked, and participatory dynamics within China's political economy. These studies suggest that policy outcomes often emerge from feedback among firms, local governments, and social actors rather than from pure top-down design (Huang et al., 2020; Wang, 2021; Hu, 2025).</p>
+    <div class="phase-strip">
+      <div class="phase">
+        <span class="ph-label">Phase I</span>
+        <span class="ph-years">pre-2000 to 2006</span>
+        <span class="ph-note">Demonstration and rural electrification. Off-grid solar for remote areas; PV treated as a poverty project, not an industry.</span>
+      </div>
+      <div class="phase">
+        <span class="ph-label">Phase II</span>
+        <span class="ph-years">2006 to 2011</span>
+        <span class="ph-note">Industrial expansion and market creation. The Renewable Energy Law, feed-in tariffs, and the Golden Sun subsidies built the legal and fiscal base.</span>
+      </div>
+      <div class="phase">
+        <span class="ph-label">Phase III</span>
+        <span class="ph-years">2011 to 2016</span>
+        <span class="ph-note">Domestic boom and overcapacity. Nationwide tariffs and the 12th Five-Year Plan drove rapid capacity, then glut.</span>
+      </div>
+      <div class="phase">
+        <span class="ph-label">Phase IV</span>
+        <span class="ph-years">2017 to present</span>
+        <span class="ph-note">Post-subsidy transition. The 531 cut and the 2025 pricing reform pushed the sector toward grid parity and consolidation.</span>
+      </div>
+    </div>
 
-    <p>A growing body of research integrates these contrasting views, portraying China's development as a hybrid regime of central steering and local experimentation (Schubert &amp; Heberer, 2015; Su &amp; Tao, 2017; Han, 2021; Fischer et al., 2021; Zhang, 2024; Xiang &amp; Lo, 2025). These studies depict China's governance as a dynamic equilibrium rather than a fixed model: central coercion delineates the limits of acceptable action, while adaptive, consultative processes and market mechanisms operate within those limits.</p>
+    <p>The instruments themselves operate at four levels, from top-level legal framing down to the financing of individual firms and the coordination across them. Form 1 is a lookup for that structure.</p>
+
+    <table class="data-table">
+      <caption>Form 1. Four levels of government intervention in the PV sector.</caption>
+      <thead>
+        <tr><th>Level</th><th>Main instruments</th><th>Function</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Macro: strategic and institutional planning</td><td>Renewable Energy Law (2006, amended 2009), Five-Year Plans, the 2020 carbon-neutrality pledge</td><td>set strategic priorities and provide long-term legal certainty</td></tr>
+        <tr><td>Meso: market regulation and incentives</td><td>feed-in tariffs, Golden Sun (2009), Solar Roofs (2009), VAT rebates, the 531 Policy (2018), the 136 Notice (2025)</td><td>shape market behavior through pricing and subsidy reform</td></tr>
+        <tr><td>Micro: operational and resource support</td><td>China Development Bank loans, green bonds, SOE-private joint ventures, national R&amp;D programs</td><td>fund enterprise operations and relieve capital constraints</td></tr>
+        <tr><td>Cross-level: systemic coordination</td><td>joint central-local initiatives, government-guided funds, firm-government cooperation</td><td>integrate central planning, local experiment, and firm innovation</td></tr>
+      </tbody>
+    </table>
+
+    <p>Scholars read these indicators through a common set of proxies: research and innovation (patent counts, R&amp;D), social integration (rural electrification, agrivoltaics), manufacturing capacity, and installed capacity. The debate over whether the state's levers actually drove those indicators is, by now, largely settled in one direction. Yuan et al. (2014) find subsidies amplified volatility while international demand remained decisive; Lin and Luan (2020) find firm-level governance outweighed subsidies in explaining innovation efficiency; Liu et al. (2025) and Xu et al. (2020) find installed capacity tracking energy demand, GDP, and learning rates more than policy incentives. The emerging consensus treats state policy as an enabling framework, with sustained progress resting on firm capability and technological learning.</p>
+
+    <p>Yet, as most studies implicitly assume a linear causal link between supportive policy and industrial progress, the actual causal mechanisms remain weakly theorized. Many analyses infer state-driven causality simply from policy presence and industry growth, without disentangling how policies interact with firm behavior and local governance. Even those not directly discussing the government's role treat subsidies as a default promotional power (Song et al. 2022; Wang et al. 2022). That gap, the inferred cause never traced, is what the process-tracing below is built to close.</p>
   </section>
 
-  <!-- 2 -->
-  <section id="political-economy">
-    <h2>2. The Political Economy of China's Photovoltaic Industry</h2>
+  <!-- ════════ 3. HYPOTHESES ════════ -->
+  <section id="hypotheses">
+    <h2>3. Three Hypotheses, and What Each Predicts</h2>
 
-    <p>In 2020, the Chinese government committed to peaking CO₂ emissions before 2030 and achieving carbon neutrality by 2060 (Liu et al., 2023). This pledge positioned renewable energy as a national priority, with photovoltaic development viewed as both a co-benefit and a nature-based solution, simultaneously combating land degradation and producing clean energy.</p>
+    <p>Building on the three frameworks above, the study proposes three alternative explanations for Jiangsu's leading position, each stated so that the evidence in the following sections can confirm or break it.</p>
 
-    <p>Across the literature, government intervention typically includes law- and policy-making favorable to the PV industry, financial subsidies, and direct investment. Form 1 below illustrates how these interventions can be divided into four levels.</p>
+    <h3>H1: Authoritarian mobilization</h3>
+    <p>Jiangsu's PV development is primarily driven by centralized coordination and hierarchical implementation. The central government designs targets and allocates resources, provincial authorities translate them into local plans and subsidies, and market and social actors follow state directives. Policy success, under this logic, depends on the coherence of administrative control and fiscal mobilization rather than local autonomy or firm-level initiative. If this hypothesis holds, we should see diffusion track central directives and subsidy schedules closely: build-out accelerating when the state sets targets and releases funds, and stalling when it withdraws them, with little independent movement from firms or markets.</p>
 
+    <h3>H2: Adaptive and participatory governance</h3>
+    <p>Jiangsu's PV growth benefits more from local experimentation and participatory feedback than from direct central command. Municipal and county governments adapt national directives to local conditions, while enterprises and research institutions shape implementation through consultation, innovation, and market responsiveness, reflecting an adaptive governance process embedded within, but not dictated by, the state hierarchy. If this hypothesis holds, we should see local experiments and bottom-up feedback lead rather than follow central policy: firms, research institutes, and citizens visibly shaping rule-making through consultation or contestation before the policy is set, not only reacting after it.</p>
+
+    <h3>H3: Hybrid governance</h3>
+    <p>Jiangsu's PV industry reflects a hybrid configuration that fuses hierarchical authority with market adaptation. Central and provincial governments set ideological and regulatory boundaries, framing PV as part of national energy security and environmental narratives, while local governments retain limited autonomy to coordinate with enterprises, investors, and research actors, producing a system where political discipline and market pragmatism coexist. If this hypothesis holds, we should see policy set the timing and scale of build-out while enterprise profitability decides what actually runs: capacity responding to directives and subsidies, but operation, persistence, and innovation tracking market conditions, and corrective regulation arriving after market excesses rather than ahead of them.</p>
+  </section>
+
+  <!-- ════════ 4. TIMELINE ════════ -->
+  <section id="timeline">
+    <h2>4. The Provincial Policy Timeline</h2>
+
+    <p>A search across six central and provincial agencies for 1997 to 2024 returns a dense record of documents. A representative subset, those repeatedly reissued or explicitly flagged as significant, traces how national strategy was translated into provincial practice.</p>
+
+    <table class="data-table">
+      <caption>Form 3. Representative policy documents (selected). The full timeline is in the working paper.</caption>
+      <thead>
+        <tr><th class="yr">Year</th><th>Issuer</th><th>Document and focus</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="yr">2007</td><td>NDRC</td><td><em>Medium- and Long-Term Plan for Renewable Energy</em>: first national recognition of solar's strategic status, with conservative 2010 and 2020 targets.</td></tr>
+        <tr><td class="yr">2009</td><td>MOF, MOST, NEA</td><td><em>Golden Sun Demonstration Program</em>: 50 to 70 percent capital subsidies for on-grid PV. The strongest central financial signal of the period.</td></tr>
+        <tr><td class="yr">2009</td><td>Jiangsu Gov.</td><td><em>Opinions on Promoting PV in Jiangsu</em> (Su Zheng Ban Fa [2009] No. 85): the earliest provincial document, a 1 RMB/kWh tariff target and a 400 MW goal by 2011.</td></tr>
+        <tr><td class="yr">2011</td><td>Jiangsu Gov.</td><td><em>12th Five-Year Plan for Strategic Emerging Industries</em>: the provincial blueprint, pairing PV with materials, electronics, and smart grids.</td></tr>
+        <tr><td class="yr">2013</td><td>State Council</td><td><em>Several Opinions on the Healthy Development of the PV Industry</em>: the national corrective during the post-2011 overcapacity crisis, the domestic-market pivot forced by the export collapse.</td></tr>
+        <tr><td class="yr">2018</td><td>NDRC, MIIT</td><td><em>Intelligent PV Development Action Plan</em>: the smart-PV agenda. The same year, the 531 Notice began the subsidy withdrawal.</td></tr>
+        <tr><td class="yr">2021</td><td>NDRC</td><td><em>14th Five-Year Plan for Renewable Energy</em>: the carbon-peaking roadmap anchoring provincial expansion.</td></tr>
+        <tr><td class="yr">2023</td><td>JDRC</td><td><em>Offshore PV Development Plan (2023 to 2027)</em>: the start of Jiangsu's offshore era, leveraging coastal geography.</td></tr>
+        <tr><td class="yr">2024</td><td>JDRC</td><td><em>Notice on Distributed PV Grid Connection</em>: targets for grid capacity and cross-river transmission, with 400 billion RMB of investment for 2024 to 2025.</td></tr>
+      </tbody>
+    </table>
+
+    <p>Read against the three hypotheses, the timeline is mostly consistent with hierarchy: national documents lead and provincial ones follow and adapt them, which is what H1 would predict and what the dating of the Jiangsu responses to the 2009, 2013, and 2018 national notices shows. But the timeline alone cannot adjudicate, because a document calendar records the state's intentions, not the industry's behavior; whether those directives actually moved diffusion, or merely accompanied it, is a question only the patent, generation, and utilization series below can answer. The timeline, in other words, establishes that the state was present and sequenced; it is the quantitative evidence that tests whether the state was the cause.</p>
+
+    <p>Below the provincial level, municipal subsidies fill the gaps: Yangzhong (2015) added 0.3 RMB/kWh for residential rooftops, Suzhou (2015) layered 0.1 RMB/kWh on top of national support, and Wuxi's Xinwu district (2022) offered a one-time 0.1 RMB/W for new rooftop systems, each explicitly aimed at the small, privately initiated installations that national and provincial programs left uncovered. This adaptive, gap-filling role is real, but it operates inside the boundaries the higher levels set, not ahead of them.</p>
+  </section>
+
+  <!-- ════════ 5. PATENTS ════════ -->
+  <section id="patents">
+    <h2>5. Evidence I: Innovation Tracked the Export Boom</h2>
+
+    <p>Patent counts are the cleanest available proxy for innovation. Drawn from the China National Intellectual Property Administration's platform, filtered to Jiangsu and PV-related codes, they are dominated by enterprises rather than universities.<a class="fn" href="#fn1">1</a></p>
+
+    <p class="verdict">Innovation rose with export demand, then fell with it.</p>
     <figure>
-      <img src="Form 1 Four Level of Government Intervention.png" alt="Table showing four levels of government intervention in China's PV industry: national law and strategy, central financial instruments, provincial policy adaptation, and municipal fiscal incentives" />
-      <figcaption>Form 1. Four levels of government intervention in China's PV industry.</figcaption>
+      <img src="jiangsu_pv_figPatents.png" alt="Line chart of PV-related patent applications in Jiangsu from 1998 to 2024, with the 2007 to 2011 surge shaded, a peak of 108 in 2011, and a steep collapse in 2012 after the EU and US tariffs." />
+      <figcaption>Figure 1. PV-related patent applications in Jiangsu (CNIPA, IPC-filtered). The surge from 2007 to 2011 and the collapse in 2012 frame the whole argument. Source: CNIPA Patent Search and Analysis platform.</figcaption>
     </figure>
 
-    <p>To capture the trajectory of China's PV sector, scholars use a common set of developmental indicators, each serving as a proxy for a specific aspect of growth:</p>
+    <p>Jiangsu's patent counts surged sharply between 2007 and 2011, fell steeply in 2012, and never recovered to the previous peak. The pattern echoes Wang and Liu (2024) and Lin and Liu (2024): the global PV market's rapid expansion from 2006 to 2010 pushed Chinese firms to scale capacity for export, and the 2008 financial crisis, followed by the European and American anti-dumping and anti-subsidy tariffs of late 2011, then undercut those exports and forced an industry-wide contraction.</p>
 
-    <ul class="indicator-list">
-      <li><strong>Research and innovation:</strong> patent counts, R&amp;D expenditure, and innovation efficiency indices tracking technological advancement.</li>
-      <li><strong>Social integration:</strong> metrics such as rural electrification and agrivoltaic deployment linking PV development to social and environmental goals.</li>
-      <li><strong>Manufacturing capacity:</strong> annual production volume of solar equipment (cells, modules, wafers, polysilicon), reflecting industrial scale and competitiveness.</li>
-      <li><strong>Installed capacity:</strong> total power-generation capability from all PV systems, expressed in watts, kilowatts, or gigawatts.</li>
-    </ul>
+    <p>The timing is the argument: innovation rose with export demand and fell with the tariffs of late 2011, not with any domestic policy shift, which is direct evidence against pure authoritarian mobilization (H1) and for the profit-and-market reading (H3). Had the central state been driving the curve, the collapse should have tracked a directive; instead it tracks a market.</p>
 
-    <p>Less frequently, studies incorporate export performance (Lin &amp; Liu, 2024) and social acceptance (Irfan et al., 2021) to capture the global and societal dimensions of PV diffusion.</p>
-
-    <p>Whether state intervention consistently drives these indicators remains contested. Most studies acknowledge that policy support played an essential role in the early stages of industrialization (Wang, 2010; Yuan et al., 2014; Lin &amp; Luan, 2020; Xu et al., 2020; Wang et al., 2021; Zhao &amp; Wang, 2020; Liu, 2024; Usman, 2024; Lin et al., 2025) but argue that it cannot explain long-term performance.</p>
-  </section>
-
-  <!-- 3 -->
-  <section id="process-tracing">
-    <h2>3. Process Tracing of the PV Industry in Jiangsu Province</h2>
-
-    <p>Provincial variation in land resources, solar radiation, and policy incentives produces marked spatial heterogeneity in installations. PV projects generally fall into two categories: centralized and distributed systems.</p>
-
-    <div class="footnote">
-      <strong>Centralized vs. distributed PV:</strong> Centralized PV consists of large-scale solar farms feeding electricity into national or regional grids, typically built in open, resource-rich areas such as Gansu, Qinghai, Ningxia, and Inner Mongolia — planned and funded primarily by central or provincial governments. Distributed PV includes small- or medium-scale installations whose power is consumed locally and sometimes sold back to the grid; it is usually financed by private enterprises, industrial parks, or households and can expand incrementally.
-    </div>
-
-    <p>Jiangsu is characterized primarily by distributed systems. Encouraged by local subsidies and grid buyback schemes, distributed PV projects have flourished in Jiangsu, supported by robust infrastructure, skilled labor, and dense industrial clusters. Wang and Liu (2024) describe China's PV development as spatially and temporally uneven, with eastern coastal regions dominating manufacturing and Jiangsu Province at the forefront.</p>
-
-    <div class="footnote">
-      <strong>Industrial chain geography:</strong> Along the PV industrial chain, the upstream segment (polysilicon, silicon wafers, metals) concentrates in resource-rich interior regions; the midstream segment (equipment manufacturing) clusters in coastal provinces such as Jiangsu, Zhejiang, and Guangdong; and the downstream segment (installation and maintenance) is more decentralized. Most studies, including this one, focus on the mid- and downstream stages.
-    </div>
-
-    <p>Wang and Liu also identify a neighborhood diffusion pattern in which PV enterprises cluster geographically, particularly in Jiangsu.</p>
-  </section>
-
-  <!-- 4 Policy timeline -->
-  <section id="policy-timeline">
-    <h3 id="policy-timeline">Provincial Policy Document Timeline</h3>
-
-    <p>To identify relevant provincial policy documents corresponding to China's evolving PV governance between 1997 and 2024, we searched across official government portals to capture the interventions summarized in Form 1. The starting point of 1997 marks the launch of the "Light of China" initiative and the establishment of Trina Solar in Changzhou — Jiangsu's formal entry into PV manufacturing. The primary search targets were the most important state agencies releasing developmental strategies and core provincial agencies in Jiangsu coordinating energy, industrial development, and environmental protection:</p>
-
-    <ol class="agency-list">
-      <li>Jiangsu Development and Reform Commission (江苏省发展和改革委员会)</li>
-      <li>Industry and Information Technology Department of Jiangsu Province (江苏省工业和信息化厅)</li>
-      <li>Jiangsu Energy Regulatory Office of the National Energy Administration (国家能源局江苏监管办公室)</li>
-      <li>People's Government of Jiangsu Province (江苏省人民政府)</li>
-      <li>Department of Ecology and Environment of Jiangsu Province (江苏省生态环境厅)</li>
-      <li>National Development and Reform Commission (中华人民共和国发展和改革委员会)</li>
+    <ol class="footnotes" id="footnotes-1">
+      <li id="fn1"><strong>1.</strong> Patent counts capture applications, not grants or quality, and the IPC filter (H01L 31/00, H01L 21/00, C30B 29/00, C01B 33/00) is ours. Because no public PV-specific R&amp;D figures exist in the National Bureau of Statistics databases, no innovation-efficiency ratio (patents to R&amp;D) is possible; that more precise measure is left for future data.</li>
     </ol>
-
-    <p>The search covered 1997–2024. Key findings from each agency are summarized below.</p>
-
-    <div class="policy-grid">
-      <div class="policy-card">
-        <h4>Jiangsu Development and Reform Commission (JDRC)</h4>
-        <ul>
-          <li>20 major policy files (2020–2024)</li>
-          <li>Documents evolved from industrial encouragement (2020–2021) → distributed and offshore PV promotion (2023–2024) → financial reform and grid pricing mechanisms (2024)</li>
-          <li>Prescriptive tone emphasizing top-down mobilization and inter-departmental synergy</li>
-        </ul>
-      </div>
-      <div class="policy-card">
-        <h4>Industry and Information Technology Department (MIIT Jiangsu)</h4>
-        <ul>
-          <li>~8 PV-related documents, mostly 2021–2024</li>
-          <li>Responses to NPC deputy suggestions, pilot projects, and integration of distributed PV with industrial upgrading and digital infrastructure</li>
-          <li>Policies emphasize industrial linkage rather than energy governance</li>
-        </ul>
-      </div>
-      <div class="policy-card">
-        <h4>Jiangsu Energy Regulatory Office (NEA Provincial Branch)</h4>
-        <ul>
-          <li>~90 items total (2018–2024): distributed PV work plans and grid-connection management (16); electricity subsidy oversight and complaint resolution (69); process supervision and innovation reports</li>
-          <li>Practical orientation: task assignments, enforcement updates, public supervision reports (12398 hotline), and evaluations of local policy compliance</li>
-        </ul>
-      </div>
-      <div class="policy-card">
-        <h4>People's Government of Jiangsu Province</h4>
-        <ul>
-          <li>~10 relevant documents (2009–2025)</li>
-          <li>Recent focus (2021–2025): distributed PV in urban clusters, integration with 14th Five-Year Plan energy and urban environmental goals, and regional pilot programs</li>
-        </ul>
-      </div>
-      <div class="policy-card">
-        <h4>Department of Ecology and Environment of Jiangsu Province</h4>
-        <ul>
-          <li>Few direct PV policy documents; major reports on pilot projects (distributed and offshore PV) in cities such as Suzhou and Lianyungang</li>
-        </ul>
-      </div>
-      <div class="policy-card">
-        <h4>Cross-Agency Patterns</h4>
-        <ul>
-          <li>Early stage (2009–2015): Initial institutionalization — implementation opinions on PV promotion, pilot demonstrations</li>
-          <li>Middle stage (2016–2020): Industrial coordination and "green finance" integration</li>
-          <li>Recent stage (2021–2024): Multi-level synergy — distributed and offshore PV, financial instruments, and carbon-neutral alignment</li>
-        </ul>
-      </div>
-    </div>
-
-    <p>Compared with the national policy phases previously discussed, Jiangsu's provincial policy path shows a compressed and industry-oriented evolution. The province translated central strategies into regional cluster development, combining PV manufacturing with materials, electronics, and smart-grid sectors. It also encouraged embedding PV within green urban infrastructure and environmental regulation. In the post-subsidy era, the province emphasized coordination and system integration, linking offshore and distributed PV with grid investment, energy storage, and green finance. Overall, Jiangsu acts as an intermediary between central planning and municipal execution — regulating and supervising PV firms toward the nationally directed path while emphasizing flexibility and adjustment to local conditions.</p>
-
-    <p>At the municipal level, Jiangsu's governments introduced complementary subsidies to extend photovoltaic incentives to actors not fully covered by national and provincial programs. The Implementation Opinions on Accelerating Demonstration and Application of Distributed PV Power Generation issued by the Yangzhong Municipal People's Government (2015) granted a 0.3 RMB/kWh subsidy for residential rooftop systems for six years (2015–2021), explicitly excluding projects already receiving national or provincial aid. Suzhou Municipal People's Government (2015) offered an additional 0.1 RMB/kWh feed-in subsidy for grid-connected projects completed between 2014 and 2016, on top of national subsidies, for three years. Similarly, Wuxi High-Tech Zone Administrative Committee (2022) provided a one-time subsidy of 0.1 RMB/W for rooftop owners installing new distributed PV systems. Collectively, these policies highlight how municipal governments in Jiangsu played an adaptive, gap-filling role — localizing national and provincial energy transition goals through direct fiscal incentives and focusing on small-scale, privately initiated installations.</p>
   </section>
 
-  <!-- 5 Observation -->
-  <section id="observation">
-    <h3>Provincial PV Industry Observation</h3>
+  <!-- ════════ 6. SOCIAL INTEGRATION ════════ -->
+  <section id="integration">
+    <h2>6. Evidence II: A Boom the Province's Own Books Ignored</h2>
 
-    <p>Based on the four indicators generalized above, data were collected to capture the development trajectory of Jiangsu's PV industry. The indicators of manufacturing capacity and installed capacity were combined into a single dimension of diffusion, representing how widely PV technology has spread across the province. While national policies initially treated photovoltaics as instruments for rural electrification, Jiangsu entered the field through early enterprise formation — notably with Trina Solar (founded in 1997) and Suntech Power (founded in 2001), both private firms that became leaders in PV manufacturing.</p>
+    <p>Although the 2006 Renewable Energy Law is often treated as the turning point, whether PV became pervasive in Jiangsu then is doubtful. Despite the patent surge from 2007, the Jiangsu section of the 2007 Electric Power Yearbook still left solar out of the tables on generation equipment and installed capacity; the "Major Events" section instead celebrated large fuel-based stations. The 2008 yearbook framed rural electrification through conventional energy, not PV, centering reliability and thermal capacity. In 2009, provincial energy investment went to electrified railways and rural grid enhancement: "electrification" meant transmission infrastructure, not renewable generation. Even though the central Golden Sun program and the provincial Opinions both launched that year, solar still did not appear as an independent category. This absence may imply that, in Jiangsu, electrification denoted infrastructural modernization rather than an energy transition, and that PV generation remained peripheral to provincial energy construction.</p>
 
-    <p>Patent data were drawn from China National Intellectual Property Administration's Patent Search and Analysis platform, filtered by application location (Jiangsu Province) and IPC codes related to PV technology: H01L 31/00 (semiconductor devices for photoelectric conversion), H01L 21/00 (manufacturing processes), C30B 29/00 (single crystal growth, silicon ingots), and C01B 33/00 (silicon and its compounds, polysilicon).</p>
+    <p>This matters for the hypotheses, not just the chronology: patents were already surging in 2007 while the province's own energy statistics still ignored solar, which means the early boom was manufacturing for export, not a state-led domestic build-out. The gap between a booming patent count and an empty provincial capacity table is, in miniature, the case against H1.</p>
 
-    <figure>
-      <img src="Patent_Jiangsu.png" alt="Line chart showing PV-related patent applications in Jiangsu Province from 1997 to 2024, with rapid growth after 2010 and a peak around 2018–2020" />
-      <figcaption>Figure 1. PV-related patent applications in Jiangsu Province, 1997–2024.</figcaption>
-    </figure>
+    <p>Solar appeared as an independent category only in 2012, in both the equipment and installed-capacity tables. By 2014 it grew sharply, surpassing wind and hydro, alongside new emphasis on market supervision, a shift that tracked the central "New Round of Power Sector Reform" (Document No. 9, 2015; the 2014 data appear in the 2015 yearbook).<a class="fn" href="#fn2">2</a> In 2015 a PV project entered "Major Events" for the first time, the Huadian (Xinghua) floating solar-hydro base, with 500 MW of capacity. From 2018, large state-owned and private joint projects drew emphasis, and provincial "Major Events" gave way to integrated national records, marking a shift from local to nationally coordinated reporting.</p>
 
-    <p>Data on solar power generation and installed capacity were drawn from the 2013–2021 Electric Power Yearbooks (covering data from 2012 to 2020). Installed capacity refers to the maximum potential output of all operating PV generators, while power generation measures actual electricity produced over a year. The relationship between the two can be expressed as: Power Generation (GWh) = Installed Capacity (GW) × Operating Hours.</p>
-
-    <figure>
-      <img src="Diffusion_Jiangsu.png" alt="Line chart showing growth in PV installed capacity and power generation in Jiangsu from 2012 to 2020, with domestic expansion accelerating after 2014" />
-      <figcaption>Figure 2. PV diffusion in Jiangsu: installed capacity and power generation, 2012–2020.</figcaption>
-    </figure>
-
-    <p>Figure 2 shows that domestic expansion did not begin until 2014, coinciding with the issuing of <em>Several Opinions on Promoting the Healthy Development of the Photovoltaic Industry</em> (2013) and the implementation of the <em>National PV Development Plan</em> (2014) — both of which sought to redirect production toward the domestic market after the international downturn caused by anti-dumping and anti-subsidy measures.</p>
-
-    <p>It is worth noting that annual average utilization hours of PV power plants with an installed capacity of 6 MW or above remained generally stable between 2016 and 2023 (see Figure 3). These figures primarily represent centralized PV power stations, in contrast to distributed systems. This stability indicates that distributed PV projects were disproportionately affected by the withdrawal of subsidies — making the post-2021 policy emphasis on integrating PV into the broader energy system both logical and necessary.</p>
-
-    <figure>
-      <img src="Operation_Jiangsu.png" alt="Bar chart showing annual average utilization hours of large-scale PV power stations in Jiangsu from 2016 to 2023, with values remaining relatively stable across the period" />
-      <figcaption>Figure 3. Annual average utilization hours of large-scale PV power stations in Jiangsu, 2016–2023.</figcaption>
-    </figure>
-
-    <p>Can we therefore say that policy alone determines the life and death of PV projects? Not entirely. As early as 2006, the Renewable Energy Law and associated tax incentives and feed-in tariffs had already been established, yet domestic PV diffusion remained limited. What truly shifted the industry's trajectory was the collapse of overseas demand after 2011, which compelled enterprises to redirect production toward the domestic market. Subsidies helped stimulate project construction but did not drive the technological breakthroughs necessary for achieving grid parity — the point at which solar electricity becomes economically competitive with coal. As Gao Jifan, Chairman of Trina Solar, noted in an interview with <em>National Business Daily</em> (2024), the real catalyst for sustainable development lies in technological innovation, which must be respected and protected as the foundation of industrial competitiveness. Qu Xiaohua, Chairman of Atlas Solar Power Group, stated similar views in an interview with <em>Energy China</em> (2025).</p>
-
-    <p>Furthermore, the blind expansion of PV installations into regions poorly suited for solar power cannot be equated with genuine development. Since around 2013, agrivoltaic projects — which integrate solar energy with agricultural land use — have spread rapidly across China under the banner of the "green agenda." Yet, as Hu (2023, 2025) argues, many of these projects have been characterized by large-scale land acquisition, exclusionary enforcement, and disregard for local socioecological systems.</p>
-
-    <p>Recent media investigations (Wei, 2022; <em>Economic Observer Online</em>, 2024; <em>Polaris Solar PV Network</em>, 2024) continue to expose land-use conflicts surrounding rural PV projects. Local governments, motivated by short-term fiscal gains and modernization performance targets, frequently converted high-quality farmland into PV bases. Farmer complaints drew national attention through outlets such as <em>Time Finance</em> and <em>CPPCC News</em> (Hou, 2024). In response, the central government and multiple provincial authorities — including Jiangsu, Shanxi, and Tianjin — issued new regulations between 2023 and 2025 that strictly prohibit PV construction on basic farmland and establish higher land-use standards. These regulatory adjustments signify a shift from policy encouragement to corrective governance: they illustrate how environmental and social backlash has reshaped the trajectory of China's rural energy development, and simultaneously indicate a lack of institutional feedback channels and scarce resident participation in decision-making.</p>
+    <ol class="footnotes" id="footnotes-2">
+      <li id="fn2"><strong>2.</strong> The China Electric Power Yearbook reports a data year one volume behind its publication year; figures here are labeled by data year.</li>
+    </ol>
   </section>
 
-  <!-- 6 Synthesis -->
+  <!-- ════════ 7. DIFFUSION ════════ -->
+  <section id="diffusion">
+    <h2>7. Evidence III: Capacity Climbed, Output Stumbled</h2>
+
+    <p>Installed capacity is the maximum potential output of all operating PV generators; power generation is the electricity actually produced. Their ratio is utilization, and the gap between them is where the hybrid mechanism shows itself. Generation and capacity data for Jiangsu come from the 2013 to 2021 Electric Power Yearbooks, covering 2012 to 2020.</p>
+
+    <p class="verdict">Capacity kept climbing; output stumbled in 2019.</p>
+    <figure>
+      <img src="jiangsu_pv_figDiffusion.png" alt="Combination chart for Jiangsu PV from 2012 to 2023: bars show annual generation, a line shows installed capacity rising throughout, with generation falling in 2019 even as capacity climbs after the 531 cut." />
+      <figcaption>Figure 2. Jiangsu PV diffusion, 2012 to 2023. Bars: annual generation. Line: installed capacity. Generation falls at 2019 while capacity keeps rising; 2023 generation is not yet reported. Source: China Electric Power Yearbooks.</figcaption>
+    </figure>
+
+    <p>Domestic expansion did not begin until 2014, coinciding with the 2013 <em>Several Opinions</em> and the 2014 National PV Development Plan, both of which sought to redirect production toward the domestic market after the international downturn caused by the anti-dumping and anti-subsidy measures.</p>
+
+    <div class="note-box"><strong>Data note.</strong> The Electric Power Yearbook reports a data year one volume behind its publication year; figures here are labeled by data year. Generation peaks in 2018 and falls at 2019, consistent with the June 2018 "531" cut taking effect in the following year.</div>
+
+    <p>Generation fell sharply in 2019, the year after the 531 cut, even as installed capacity kept rising. This divergence is the hybrid mechanism in one chart: policy set the timing and scale of the build-out, since capacity kept climbing on the strength of earlier approvals, but enterprise viability determined whether the plants actually ran, and once the 531 cut removed the subsidy, generation fell even as capacity rose. That is H3, not H1: the state could command construction but not profitable operation.</p>
+
+    <p>Does policy alone, then, determine the life and death of PV projects? Not entirely. As early as 2006 the Renewable Energy Law and its tax incentives and feed-in tariffs were in place, yet domestic diffusion stayed limited. Three observations converge on the same mechanism. The patent curve collapsed with the 2011 tariffs, not with any domestic directive. Generation tracked enterprise viability rather than the installed capacity the state had authorized. And the 2013 and 2014 national documents that redirected the industry inward were themselves responses to the export shock, not its cause. What shifted the trajectory, then, was the collapse of overseas demand after 2011, which forced firms toward the domestic market; subsidies stimulated construction but never bought the technological breakthrough that grid parity required. As Gao Jifan of Trina Solar argued in 2024, and Qu Xiaohua of Atlas in 2025, the real catalyst for sustainable development is technological innovation, not subsidy.</p>
+
+    <p>As Hu (2023, 2025) argues under the heading of solar extractivism, and as land-conflict reporting has documented (Wei 2022; Economic Observer Online 2024), the blind expansion of PV into regions poorly suited for solar, often at the cost of farmland, cannot be equated with genuine development. Since around 2013, agrivoltaic projects have spread under a "green agenda," many marked by large-scale land acquisition, exclusionary enforcement, and disregard for local socioecological systems. Local governments, chasing short-term fiscal gains and modernization performance, frequently converted high-quality farmland into PV bases; farmer complaints reached national outlets (Hou 2024), and between 2023 and 2025 the central government and several provinces, Jiangsu among them, banned PV on basic farmland and raised land-use standards.</p>
+
+    <p>These corrections mark a shift from encouragement to corrective governance, and they show the state reacting to backlash rather than anticipating it. Farmers were heard only after the damage, through complaint rather than consultation, which is itself the measure of how little formal feedback the system offers, and the clearest place where the H2 prediction fails: participation here is ex post, not built into rule-making.</p>
+
+    <h3>Utilization hours: who bore the squeeze</h3>
+    <p class="verdict">Big stations held steady, so the squeeze fell on small ones.</p>
+    <figure>
+      <img src="jiangsu_pv_figHours.png" alt="Line chart of average annual utilization hours for PV stations of 6 MW and above in Jiangsu from 2016 to 2023, holding roughly steady through the post-2018 period." />
+      <figcaption>Figure 3. Average annual utilization hours of PV stations of 6 MW and above in Jiangsu, 2016 to 2023. Stable hours for centralized plants imply distributed PV bore the subsidy withdrawal. Source: China Electric Power Yearbooks.</figcaption>
+    </figure>
+
+    <p>The utilization hours of large centralized stations held roughly steady through the post-531 squeeze. This stability indicates that distributed PV projects were disproportionately affected by the withdrawal of subsidies. The post-2021 policy turn toward integrating centralized and distributed generation then follows, balancing the two segments after the cut had fallen unevenly between them.</p>
+  </section>
+
+  <!-- ════════ 8. SYNTHESIS ════════ -->
   <section id="synthesis">
-    <h2>4. Synthesis: What Drives Jiangsu's PV Industry Development</h2>
+    <h2>8. Synthesis: What Drove Jiangsu's PV Industry</h2>
 
-    <p>Before 2011, despite the introduction of the Renewable Energy Law (2006) and a range of subsidies and strategic programs at national and provincial levels, enterprises such as Trina Solar and Suntech Power primarily targeted the international market. The state's early legal and institutional frameworks created favorable conditions but did not directly stimulate domestic diffusion. Only when global demand contracted after the 2011 anti-dumping and anti-subsidy rulings did firms redirect production to the domestic market — suggesting that market shocks rather than administrative command triggered this shift.</p>
+    <p>The trajectory suggests that Jiangsu's development was driven less by top-down mobilization or participatory governance, and more by enterprise profit incentives operating within an evolving hybrid policy environment.</p>
 
-    <p>Between 2014 and 2018, policy support under the National PV Development Plan and the feed-in tariff scheme temporarily expanded domestic capacity. Yet this expansion largely reflected firms' pursuit of subsidy-based profits, not the deepening of technological competitiveness. When the "531 New Policy" (2018) sharply cut subsidies, many projects were abandoned — indicating that policy incentives shaped timing and scale, but enterprise profitability ultimately determined persistence. Subsidies and directives thus acted as catalysts, not as autonomous engines of growth.</p>
+    <p>Before 2011, H1 finds limited support. Despite the 2006 Renewable Energy Law and a range of subsidies and strategic programs, firms such as Trina Solar and Suntech Power targeted the international market; the state's early frameworks created favorable conditions but did not directly stimulate domestic diffusion. Only when global demand contracted after the 2011 rulings did firms redirect production home, which says market shocks, not administrative command, triggered the shift. Between 2014 and 2018, feed-in tariffs temporarily expanded domestic capacity, but largely as firms pursued subsidy-based profits rather than technological depth; when the 531 cut arrived in 2018, many projects were abandoned. Policy incentives shaped timing and scale, but enterprise profitability determined persistence. Subsidies and directives thus acted as catalysts, not as autonomous engines of growth.</p>
 
-    <p>The adaptive and participatory governance hypothesis also receives limited validation. Jiangsu's provincial policy documents demonstrate technical understanding and pragmatic concern, emphasizing innovation and local suitability, but the implementation of these principles was difficult to ensure as county governments pursued expansion to meet fiscal or performance targets. Furthermore, no evidence indicates meaningful participation from NGOs, communities, or residents during decision-making. Citizens' engagement occurred only ex post, through complaints after environmental or land-use harms had already materialized. Although Yearbook data, news reports, and industry reports by the China Photovoltaic Industry Association (2017–2023) indicate meetings between industry pioneers and government leaders, no evidence suggests that these pioneers took influential roles in the process of policy-making.</p>
+    <p>H2 receives limited validation too. Jiangsu's provincial documents show technical understanding and pragmatic concern, but implementation lagged, with county governments expanding to meet fiscal targets, and no evidence indicates meaningful participation from NGOs, communities, or residents in decision-making. Citizens engaged only ex post, through complaints after the environmental and land-use harms were done. Meetings between industry pioneers and officials are recorded, but nothing shows those pioneers shaping policy before it was set.</p>
 
     <div class="finding-box">
-      <p>Jiangsu's PV development most closely aligns with the hybrid governance hypothesis: state frameworks set directions and boundaries, but enterprise profit motives and market fluctuations drive actual behavior. The central and provincial governments provide regulatory infrastructure and corrective governance — for instance, in post-2023 land-use restrictions — but these interventions often follow complaints and appeals rather than anticipate market excesses. In this sense, policy functions reactively rather than proactively, and economic pragmatism outweighs ideological mobilization.</p>
+      <p>Taken together, Jiangsu's PV development aligns most closely with the hybrid governance hypothesis (H3): state frameworks set directions and boundaries, but enterprise profit motives and market fluctuations drive actual behavior. The regulatory infrastructure and the corrective governance, the post-2023 land-use restrictions among them, tend to follow complaints rather than anticipate excess.</p>
+      <p>Policy, in short, functions reactively rather than proactively, and economic pragmatism outweighs ideological mobilization. Sustainable technological progress rests not on command or participation, but on the incentives and capacities of enterprises themselves.</p>
     </div>
 
-    <p>Jiangsu's PV industry thus exemplifies a profit-centered hybrid governance model: one where state guidance and correction coexist with market-driven dynamics, and where sustainable technological progress remains contingent not on command or participation, but on the incentives and capacities of enterprises themselves.</p>
+    <p class="kicker">Jiangsu's solar rise, then, was less commanded than permitted: the state drew the lines, and profit decided what grew inside them.</p>
   </section>
 
-  <!-- References -->
+  <!-- ════════ REFERENCES ════════ -->
   <section id="references">
-    <h2>References</h2>
-    <p>The full bibliography is available for download below.</p>
-    <a class="references-link" href="References.pdf" target="_blank" rel="noopener">Download full references (PDF) ↓</a>
+    <h2>9. References</h2>
+    <div class="references">
+      <p>An, X., Cao, J., Ba, J., &amp; Zhang, M. (2025). Transition and trajectory of spatiotemporal characterization of waste photovoltaics in China: 2013 to 2060. <em>Renewable Energy, 249</em>, 123214.</p>
+      <p>China Electricity Council (Ed.). (1998 to 2021). <em>China Electric Power Yearbook</em>. China Electric Power Press.</p>
+      <p>China National Intellectual Property Administration. Patent Search and Analysis platform. pss-system.cponline.cnipa.gov.cn</p>
+      <p>Dent, C. M. (2012). Renewable energy and East Asia's new developmentalism: Towards a low carbon future? <em>Pacific Review, 25</em>(5), 561 to 587.</p>
+      <p>Economic Observer Online. (2024, February 27). Only photovoltaics but no agriculture: The myth and reality of agrivoltaics.</p>
+      <p>Fischer, D., Gohli, H., &amp; Habich-Sobiegalla, S. (2021). Industrial policies under Xi Jinping: A steering theory perspective. <em>Issues and Studies, 57</em>(4), 1 to 27.</p>
+      <p>Hou, X. (2024, April 3). Photovoltaic projects must not occupy farmland. CPPCC News.</p>
+      <p>Hu, Z. (2023). Towards solar extractivism? A political ecology understanding of the solar energy and agriculture boom in rural China. <em>Energy Research &amp; Social Science, 98</em>, 102988.</p>
+      <p>Hu, Z. (2025). Politics over photovoltaics: Unpacking the politically directed deployment of agrivoltaics in China. <em>Sustainability Science, 20</em>(4), 1313 to 1328.</p>
+      <p>Huang, P., Castán Broto, V., &amp; Westman, L. K. (2020). Emerging dynamics of public participation in climate governance. <em>Environmental Policy and Governance, 30</em>(6), 306 to 318.</p>
+      <p>Li, C. (2012). The end of the CCP's resilient authoritarianism? A tripartite assessment of shifting power in China. <em>The China Quarterly, 211</em>, 595 to 623.</p>
+      <p>Lin, B., &amp; Liu, Y. (2024). Global carbon neutrality and China's contribution. <em>Energy Policy, 193</em>, 114299.</p>
+      <p>Lin, B., &amp; Luan, R. (2020). Do government subsidies promote efficiency in technological innovation of China's photovoltaic enterprises? <em>Journal of Cleaner Production, 254</em>, 120108.</p>
+      <p>Liu, B., Li, M., Chen, J., &amp; Sun, Z. (2025). Projected waste and recycling potential of China's photovoltaic industry. <em>Waste Management, 191</em>, 264 to 273.</p>
+      <p>National Development and Reform Commission, Ministry of Finance, &amp; National Energy Administration. (2018, May 31). Notice on matters related to photovoltaic power generation in 2018 (Document No. 823).</p>
+      <p>Schubert, G., &amp; Heberer, T. (2015). Continuity and change in China's "local state developmentalism." <em>Issues and Studies, 51</em>(2), 1 to 38.</p>
+      <p>Song, Y., Liu, T., Li, Y., &amp; Ye, B. (2022). The influence of COVID-19 on grid parity of China's photovoltaic industry. <em>Environmental Geochemistry and Health, 44</em>(9), 2847 to 2862.</p>
+      <p>Su, F., &amp; Tao, R. (2017). The China model withering? Institutional roots of China's local developmentalism. <em>Urban Studies, 54</em>(1), 230 to 250.</p>
+      <p>Wang, C. C., Gereffi, G., &amp; Liu, Z. (2021). Beyond technological relatedness: An evolutionary pro-growth coalition and industrial transformation in Kunshan, China. <em>Growth and Change, 52</em>(4), 2318 to 2341.</p>
+      <p>Wei, Y. (2022, May 31). The land dilemma behind new energy power generation. Time Finance.</p>
+      <p>Xiang, C., &amp; Lo, A. Y. (2025). Authoritarian environmentalism 2.0: An incremental transition of environmental governance in China. <em>Environment and Planning C, 43</em>(4), 765 to 782.</p>
+      <p>Xu, M., Xie, P., &amp; Xie, B. (2020). Study of China's optimal solar photovoltaic power development path to 2050. <em>Resources Policy, 65</em>, 101541.</p>
+      <p>Yuan, C., Liu, S., Yang, Y., Chen, D., Fang, Z., &amp; Shui, L. (2014). An analysis on investment policy effect of China's photovoltaic industry based on a feedback model. <em>Applied Energy, 135</em>, 423 to 428.</p>
+    </div>
   </section>
 
 </main>
 
 <footer>
-  <p>Yifang Xia &nbsp;·&nbsp; Research Essay &nbsp;·&nbsp; All rights reserved</p>
+  Yifang Xia · Process Tracing of Jiangsu's Photovoltaic Industry, 1997 to 2024
 </footer>
 
 </body>
